@@ -1,0 +1,38 @@
+{
+  "id": "a5",
+  "name": "Alternating group $A_5$",
+  "type": "alternating,linear",
+  "order": 60,
+  "factored_order": "2^2.3.5",
+  "dividing_primes": [ 2, 3, 5 ],
+  "schur_multiplier": "2",
+  "outer_automorphism_group": "2",
+  "presentation": [["a","b"],["a^2=b^3=(ab)^5=1"]],
+  "variants": [
+    { "var-id": "a5", "name": "Alternating group $A_5$" },
+    { "var-id": "s5", "name": "Symmetric group $S_5$" }
+  ],
+  "standard_generators": [["a","2"],["b","3"],["ab","5"]],
+  "number_of_classes": 5,
+  "class_names": ["1A","2A","3A","5A","5B"],
+  "class_information": "a5_class_info.json",
+  "character_information": "a5_char_info.json",
+  "brauer_information": {
+    "2": "a5_brauer_2.json",
+    "3": "a5_brauer_3.json",
+    "5": "a5_brauer_5.json"  },
+  "maximals_information": "a5_maxes_info.json",
+  "symbol_definitions": "../symbols.json",
+  "representations": {
+    "permutation": "perm/",
+    "linear": "lin/"
+  },
+  "creator": "David Craven",
+  "creation_date": "2025-08-06",
+  "status": "active",
+  "atlas_version": "4.0",
+  "file_version": 1,
+  "version_history": "v1: first version",
+  "sources": "Automated using Magma V2.28-21.",
+  "last_updated": "2025-08-06"
+}

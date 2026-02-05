@@ -1,0 +1,37 @@
+{
+  "id": "a4",
+  "name": "Alternating group $A_4$",
+  "type": "alternating",
+  "order": 12,
+  "factored_order": "2^2.3",
+  "dividing_primes": [ 2, 3 ],
+  "schur_multiplier": "2",
+  "outer_automorphism_group": "2",
+  "presentation": [["a","b"],["a^2=b^3=(ab)^3=1"]],
+  "variants": [
+    { "var-id": "a4", "name": "Alternating group $A_4$" },
+    { "var-id": "s4", "name": "Symmetric group $S_4$" }
+  ],
+  "standard_generators": [["a","2"],["b","3"],["ab","3"]],
+  "number_of_classes": 4,
+  "class_names": ["1A","2A","3A","3B"],
+  "class_information": "a4_class_info.json",
+  "character_information": "a4_char_info.json",
+  "brauer_information": {
+    "2": "a4_brauer_2.json",
+    "3": "a4_brauer_3.json"  },
+  "maximals_information": "a4_maxes_info.json",
+  "symbol_definitions": "../symbols.json",
+  "representations": {
+    "permutation": "perm/",
+    "linear": "lin/"
+  },
+  "creator": "David Craven",
+  "creation_date": "2025-08-06",
+  "status": "active",
+  "atlas_version": "4.0",
+  "file_version": 1,
+  "version_history": "v1: first version",
+  "sources": "Automated using Magma V2.28-21.",
+  "last_updated": "2025-08-06"
+}

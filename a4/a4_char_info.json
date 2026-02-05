@@ -1,0 +1,57 @@
+{
+  "id": "a4_char_info",
+  "group": "a4",
+  "indicators": [ 1, 0, 0, 1 ],
+  "degrees": [ 1, 1, 1, 3 ],
+  "characters": [
+   {
+      "id": "chi1",
+      "degree": 1,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": [ "1", "1", "1", "1" ],
+      "notes": "Trivial character"
+   },
+    {
+      "id": "chi2",
+      "degree": 1,
+      "irreducible": true,
+      "indicator": 0,
+      "field": "???",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["1", "1", "z3", "z3^2" ]
+    },
+    {
+      "id": "chi3",
+      "degree": 1,
+      "irreducible": true,
+      "indicator": 0,
+      "field": "???",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["1", "1", "z3^2", "z3" ]
+    },
+    {
+      "id": "chi4",
+      "degree": 3,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["3", "-1", "0", "0" ]
+    }
+  ],
+  "creator": "David Craven",
+  "creation_date": "2025-08-06",
+  "status": "active",
+  "atlas_version": "4.0",
+  "file_version": 1,
+  "version_history": "v1: first version",
+  "sources": "Magma V2.28-21 for character table, except for any non-quadratic field extensions, which were computed by hand from Magma data.",
+  "last_updated": "2025-08-06"
+}

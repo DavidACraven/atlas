@@ -1,0 +1,13 @@
+[
+  {
+    "id": "a4_lin_3_3_1",
+    "characteristic": 3,
+    "field": 3,
+    "degree": 3,
+    "irreducibility": "Absolutely irreducible",
+    "1-cohomology": 0,
+    "2-cohomology": 0,
+    "character": "phi2",
+    "file": "a4_lin_3_3_1.json"
+  }
+]

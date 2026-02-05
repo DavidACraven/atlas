@@ -1,0 +1,68 @@
+{
+  "id": "a5_brauer_5_info",
+  "group": "a5",
+  "prime": 5,
+  "degrees": [ 1, 3, 5 ],
+  "characters": [
+   {
+      "id": "phi1",
+      "degree": 1,
+      "irreducible": true,
+      "field": "GF(5)",
+      "values": ["1","1","1","0","0"]
+    },
+   {
+      "id": "phi2",
+      "degree": 3,
+      "irreducible": true,
+      "field": "GF(5)",
+      "values": ["3","-1","0","0","0"]
+    },
+   {
+      "id": "phi3",
+      "degree": 5,
+      "irreducible": true,
+      "field": "GF(5)",
+      "values": ["5","1","-1","0","0"]
+    }
+  ],
+   "blocks": [
+   {
+      "id": "b1",
+      "kg": 4,
+      "lg": 2,
+      "defect": 1,
+      "defect_group": "5",
+      "principal": true,
+      "ordinary_characters": ["chi1", "chi2", "chi3", "chi4"],
+      "modular_characters": ["phi1", "phi2"],
+      "decomposition_matrix": [[1,0],[0,1],[0,1],[1,1]],
+      "cartan_matrix": [[2,1],[1,3]],
+      "ext_1_matrix": [[0,1],[1,1]],
+      "projectives": [[[1],[2],[1]],
+[[2],[1,2],[2]]]
+   },
+   {
+      "id": "b2",
+      "kg": 1,
+      "lg": 1,
+      "defect": 0,
+      "defect_group": "1",
+      "principal": false,
+      "ordinary_characters": ["chi5"],
+      "modular_characters": ["phi3"],
+      "decomposition_matrix": [[1]],
+      "cartan_matrix": [[1]],
+      "ext_1_matrix": [[0]],
+      "projectives": [[[1]]]
+   }
+  ],
+  "creator": "David Craven",
+  "creation_date": "2025-08-06",
+  "status": "active",
+  "atlas_version": "4.0",
+  "file_version": 1,
+  "version_history": "v1: first version",
+  "sources": "Automated using Magma V2.28-21.",
+  "last_updated": "2025-08-06"
+}

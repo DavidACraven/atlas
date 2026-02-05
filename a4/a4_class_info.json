@@ -1,0 +1,70 @@
+{
+  "id": "a4_class_info",
+  "group": "a4",
+  "classes": [
+    {
+      "id": "1A",
+      "length": 1,
+      "order": 1,
+      "centralizer_order": 12,
+      "centralizer_shape": "$A_4$",
+      "centralizer_small_group": [12,3],
+      "rational": true,
+      "real": true,
+      "power_up": "-",
+      "power_map": "[ 1A, 1A ]",
+      "power_classes": 1,
+      "representative": "a^2"
+    },
+    {
+      "id": "2A",
+      "length": 3,
+      "order": 2,
+      "centralizer_order": 4,
+      "centralizer_shape": "$2 \\times 2$",
+      "centralizer_small_group": [4,2],
+      "rational": true,
+      "real": true,
+      "power_up": "-",
+      "power_map": "[ 1A, 2A ]",
+      "power_classes": 1,
+      "representative": "a"
+    },
+    {
+      "id": "3A",
+      "length": 4,
+      "order": 3,
+      "centralizer_order": 3,
+      "centralizer_shape": "3",
+      "centralizer_small_group": [3,1],
+      "rational": false,
+      "real": false,
+      "power_up": "3B^2",
+      "power_map": "[ 3B, 1A ]",
+      "power_classes": 2,
+      "representative": "b"
+    },
+    {
+      "id": "3B",
+      "length": 4,
+      "order": 3,
+      "centralizer_order": 3,
+      "centralizer_shape": "3",
+      "centralizer_small_group": [3,1],
+      "rational": false,
+      "real": false,
+      "power_up": "3A^2",
+      "power_map": "[ 3A, 1A ]",
+      "power_classes": 2,
+      "representative": "b^2"
+    }
+  ],
+  "creator": "David Craven",
+  "creation_date": "2025-08-06",
+  "status": "active",
+  "atlas_version": "4.0",
+  "file_version": 1,
+  "version_history": "v1: first version",
+  "sources": "Magma V2.28-21 for conjugacy classes, power up, class representatives and centralizers, using standard generators. Listing was automatic apart from centralizer shape, which was done by hand.",
+  "last_updated": "2025-08-06"
+}
