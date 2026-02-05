@@ -1,0 +1,227 @@
+{
+  "id": "j3_char_info",
+  "group": "j3",
+  "indicators": [ 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+  "degrees": [ 1, 85, 85, 323, 323, 324, 646, 646, 816, 1140, 1215, 1215, 1615, 1920, 1920, 1920, 1938, 1938, 2432, 2754, 3078 ],
+  "characters": [
+   {
+      "id": "chi1",
+      "degree": 1,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": [ "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1" ],
+      "notes": "Trivial character"
+   },
+    {
+      "id": "chi2",
+      "degree": 85,
+      "irreducible": true,
+      "indicator": 0,
+      "field": "Q(sqrt-19)",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["85", "5", "-5", "4", "1", "0", "0", "-1", "-1", "1", "1", "1", "0", "0", "1", "0", "0", "0", "0", "b19", "b19**" ]
+    },
+    {
+      "id": "chi3",
+      "degree": 85,
+      "irreducible": true,
+      "indicator": 0,
+      "field": "Q(sqrt-19)",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["85", "5", "-5", "4", "1", "0", "0", "-1", "-1", "1", "1", "1", "0", "0", "1", "0", "0", "0", "0", "b19**", "b19" ]
+    },
+    {
+      "id": "chi4",
+      "degree": 323,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q(sqrt5)",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["323", "3", "8", "-1", "3", "-b5", "-b5**", "0", "-1", "-1", "-1", "-1", "-b5", "-b5**", "0", "-b5", "-b5**", "0", "0", "0", "0" ]
+    },
+    {
+      "id": "chi5",
+      "degree": 323,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q(sqrt5)",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["323", "3", "8", "-1", "3", "-b5**", "-b5", "0", "-1", "-1", "-1", "-1", "-b5**", "-b5", "0", "-b5**", "-b5", "0", "0", "0", "0" ]
+    },
+    {
+      "id": "chi6",
+      "degree": 324,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["324", "4", "9", "0", "4", "-1", "-1", "1", "0", "0", "0", "0", "-1", "-1", "1", "-1", "-1", "1", "1", "1", "1" ]
+    },
+    {
+      "id": "chi7",
+      "degree": 646,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q(sqrt5)",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["646", "-10", "7", "-2", "2", "-2b5", "-2b5**", "-1", "0", "1", "1", "1", "0", "0", "-1", "b5", "b5**", "0", "0", "0", "0" ]
+    },
+    {
+      "id": "chi8",
+      "degree": 646,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q(sqrt5)",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["646", "-10", "7", "-2", "2", "-2b5**", "-2b5", "-1", "0", "1", "1", "1", "0", "0", "-1", "b5**", "b5", "0", "0", "0", "0" ]
+    },
+    {
+      "id": "chi9",
+      "degree": 816,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 2,
+      "values": ["816", "-16", "6", "6", "0", "1", "1", "2", "0", "0", "0", "0", "-1", "-1", "0", "1", "1", "0", "0", "-1", "-1" ]
+    },
+    {
+      "id": "chi10",
+      "degree": 1140,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["1140", "20", "15", "6", "-4", "0", "0", "-1", "0", "0", "0", "0", "0", "0", "-1", "0", "0", "1", "1", "0", "0" ]
+    },
+    {
+      "id": "chi11",
+      "degree": 1215,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q(sqrt17)",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["1215", "15", "0", "0", "3", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "b17", "b17**", "-1", "-1" ]
+    },
+    {
+      "id": "chi12",
+      "degree": 1215,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q(sqrt17)",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["1215", "15", "0", "0", "3", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "b17**", "b17", "-1", "-1" ]
+    },
+    {
+      "id": "chi13",
+      "degree": 1615,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["1615", "15", "-5", "-5", "-1", "0", "0", "3", "-1", "1", "1", "1", "0", "0", "-1", "0", "0", "0", "0", "0", "0" ]
+    },
+    {
+      "id": "chi14",
+      "degree": 1920,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "???",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["1920", "0", "0", "3", "0", "0", "0", "0", "0", "y9*4-y9*2","y9-y9*4","y9*2-y9", "0", "0", "0", "0", "0", "-1", "-1", "1", "1" ]
+    },
+    {
+      "id": "chi15",
+      "degree": 1920,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "???",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["1920", "0", "0", "3", "0", "0", "0", "0", "0","y9*2-y9","y9*4-y9*2","y9-y9*4", "0", "0", "0", "0", "0", "-1", "-1", "1", "1" ]
+    },
+    {
+      "id": "chi16",
+      "degree": 1920,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "???",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["1920", "0", "0", "3", "0", "0", "0", "0", "0", "y9-y9*4","y9*2-y9","y9*4-y9*2", "0", "0", "0", "0", "0", "-1", "-1", "1", "1" ]
+    },
+    {
+      "id": "chi17",
+      "degree": 1938,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q(sqrt5)",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["1938", "2", "3", "-6", "-2", "-b5", "-b5**", "-1", "0", "0", "0", "0", "b5", "b5**", "1", "-b5", "-b5**", "0", "0", "0", "0" ]
+    },
+    {
+      "id": "chi18",
+      "degree": 1938,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q(sqrt5)",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["1938", "2", "3", "-6", "-2", "-b5**", "-b5", "-1", "0", "0", "0", "0", "b5**", "b5", "1", "-b5**", "-b5", "0", "0", "0", "0" ]
+    },
+    {
+      "id": "chi19",
+      "degree": 2432,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["2432", "0", "-16", "2", "0", "2", "2", "0", "0", "-1", "-1", "-1", "0", "0", "0", "-1", "-1", "1", "1", "0", "0" ]
+    },
+    {
+      "id": "chi20",
+      "degree": 2754,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["2754", "-14", "9", "0", "-2", "-1", "-1", "1", "0", "0", "0", "0", "1", "1", "1", "-1", "-1", "0", "0", "-1", "-1" ]
+    },
+    {
+      "id": "chi21",
+      "degree": 3078,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["3078", "-10", "-9", "0", "2", "-2", "-2", "-1", "0", "0", "0", "0", "0", "0", "-1", "1", "1", "1", "1", "0", "0" ]
+    }
+  ],
+  "creator": "David Craven",
+  "creation_date": "2025-07-16",
+  "status": "active",
+  "atlas_version": "4.0",
+  "file_version": 1,
+  "version_history": "v1: first version",
+  "sources": "Magma V2.28-21 for character table, except for any non-quadratic field extensions, which were computed by hand from Magma data.",
+  "last_updated": "2025-07-16"
+}
