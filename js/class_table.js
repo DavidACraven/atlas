@@ -143,20 +143,24 @@ function renderTable(classInfo, state) {
   const middleHeadExtras = [];
   if (showOR) middleHeadExtras.push(`<th>Element Order</th>`);
   if (showLE) middleHeadExtras.push(`<th>Length</th>`);
-  if (showSG) middleHeadExtras.push(`<th>Centralizer SG</th>`);
+
+  const postCentralizerHeadExtras = [];
+  if (showSG) postCentralizerHeadExtras.push(`<th>Centralizer SG</th>`);
 
   const tailHeadExtras = [];
   if (showPM) tailHeadExtras.push(`<th>Power map</th>`);
   if (showPC) tailHeadExtras.push(`<th># classes</th>`);
   if (showRE) tailHeadExtras.push(`<th>Representative</th>`);
 
-  const headExtras = [...middleHeadExtras, ...tailHeadExtras];
+  const headExtras = [...middleHeadExtras, ...postCentralizerHeadExtras, ...tailHeadExtras];
 
   const rows = classes.map(c => {
     const middleExtras = [];
     if (showOR) middleExtras.push(`<td style="text-align:right;">${escapeHtml(String(c.order ?? ""))}</td>`);
     if (showLE) middleExtras.push(`<td style="text-align:right;">${escapeHtml(String(c.length ?? ""))}</td>`);
-    if (showSG) middleExtras.push(`<td>${formatSmallGroup(c.centralizer_small_group)}</td>`);
+
+    const postCentralizerExtras = [];
+    if (showSG) postCentralizerExtras.push(`<td>${formatSmallGroup(c.centralizer_small_group)}</td>`);
 
     const tailExtras = [];
     if (showPM) tailExtras.push(`<td>${escapeHtml(String(c.power_map ?? ""))}</td>`);
@@ -169,6 +173,7 @@ function renderTable(classInfo, state) {
         ${middleExtras.join("")}
         <td style="text-align:right;">${escapeHtml(String(c.centralizer_order ?? ""))}</td>
         <td>${renderMath(c.centralizer_shape ?? "")}</td>
+        ${postCentralizerExtras.join("")}
         <td>${formatPowerUp ? formatPowerUp(c.power_up) : escapeHtml(String(c.power_up ?? ""))}</td>
         ${tailExtras.join("")}
       </tr>
@@ -183,6 +188,7 @@ function renderTable(classInfo, state) {
           ${middleHeadExtras.join("")}
           <th>Centralizer order</th>
           <th>Centralizer</th>
+          ${postCentralizerHeadExtras.join("")}
           <th>Power up</th>
           ${tailHeadExtras.join("")}
         </tr>
