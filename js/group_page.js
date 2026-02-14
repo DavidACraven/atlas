@@ -19,6 +19,7 @@
     `;
 const bc = document.getElementById('breadcrumbs');
 await setHTML(bc, renderBreadcrumbs(data));
+setupCollapsibleHeader(header);
 
     // Main
     const html = `
