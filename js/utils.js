@@ -556,6 +556,82 @@ window.typesetFresh = typeset;
 window.setHTML = setHTML;
 window.appendHTML = appendHTML;
 
+function setupCollapsibleHeader(headerEl) {
+  if (!headerEl) return;
+
+  if (!document.getElementById('collapsible-header-style')) {
+    const style = document.createElement('style');
+    style.id = 'collapsible-header-style';
+    style.textContent = `
+      #page-header h1 {
+        margin: 0;
+        transition: opacity 0.2s ease, max-height 0.2s ease, margin 0.2s ease;
+        max-height: 6rem;
+        overflow: hidden;
+      }
+
+      #page-header.is-collapsed {
+        row-gap: 0;
+        padding-top: 0.25rem;
+      }
+
+      #page-header.is-collapsed h1 {
+        opacity: 0;
+        max-height: 0;
+        margin: 0;
+        pointer-events: none;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  let lastY = window.scrollY;
+  const collapseAt = 56;
+  const expandAt = 8;
+  const toggleCooldownMs = 220;
+  let isCollapsed = false;
+  let lastToggleAt = -Infinity;
+  let ticking = false;
+
+  function setCollapsed(collapsed, now) {
+    if (collapsed === isCollapsed) return;
+    isCollapsed = collapsed;
+    lastToggleAt = now;
+    headerEl.classList.toggle('is-collapsed', collapsed);
+  }
+
+  function handleScroll() {
+    ticking = false;
+    const currentY = window.scrollY;
+    const delta = currentY - lastY;
+    const now = performance.now();
+
+    if (now - lastToggleAt < toggleCooldownMs) {
+      lastY = currentY;
+      return;
+    }
+
+    if (!isCollapsed && currentY > collapseAt && delta > 0) {
+      setCollapsed(true, now);
+    } else if (isCollapsed && (currentY <= expandAt || (delta < 0 && currentY < collapseAt))) {
+      setCollapsed(false, now);
+    }
+
+    lastY = currentY;
+  }
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(handleScroll);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  handleScroll();
+}
+
+window.setupCollapsibleHeader = setupCollapsibleHeader;
+
 // Kick off MathJax readiness polling immediately
 initMathJaxManager();
 
