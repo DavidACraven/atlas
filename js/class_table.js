@@ -140,30 +140,42 @@ function renderTable(classInfo, state) {
   const showLE = state.showLength;
   const showOR = state.showOrder;
 
-  const headExtras = []
-  if (showLE) headExtras.push(`<th>Length</th>`);
-  if (showOR) headExtras.push(`<th>Element Order</th>`);
-  if (showSG) headExtras.push(`<th>Centralizer SG</th>`);
-  if (showPC) headExtras.push(`<th># classes</th>`);
-  if (showPM) headExtras.push(`<th>Power map</th>`);
-  if (showRE) headExtras.push(`<th>Representative</th>`);
+  const middleHeadExtras = [];
+  if (showOR) middleHeadExtras.push(`<th>Element Order</th>`);
+  if (showLE) middleHeadExtras.push(`<th>Length</th>`);
+
+  const postCentralizerHeadExtras = [];
+  if (showSG) postCentralizerHeadExtras.push(`<th>Centralizer SG</th>`);
+
+  const tailHeadExtras = [];
+  if (showPM) tailHeadExtras.push(`<th>Power map</th>`);
+  if (showPC) tailHeadExtras.push(`<th># classes</th>`);
+  if (showRE) tailHeadExtras.push(`<th>Representative</th>`);
+
+  const headExtras = [...middleHeadExtras, ...postCentralizerHeadExtras, ...tailHeadExtras];
 
   const rows = classes.map(c => {
-    const extras = [];
-    if (showLE) extras.push(`<td style="text-align:right;">${escapeHtml(String(c.length ?? ""))}</td>`);
-    if (showOR) extras.push(`<td style="text-align:right;">${escapeHtml(String(c.order ?? ""))}</td>`);
-    if (showSG) extras.push(`<td>${formatSmallGroup(c.centralizer_small_group)}</td>`);
-    if (showPC) extras.push(`<td style="text-align:right;">${escapeHtml(String(c.power_classes ?? ""))}</td>`);
-    if (showPM) extras.push(`<td>${escapeHtml(String(c.power_map ?? ""))}</td>`);
-    if (showRE) extras.push(`<td>${formatClassReps(c.representative ?? "")}</td>`);
+    const middleExtras = [];
+    if (showOR) middleExtras.push(`<td style="text-align:right;">${escapeHtml(String(c.order ?? ""))}</td>`);
+    if (showLE) middleExtras.push(`<td style="text-align:right;">${escapeHtml(String(c.length ?? ""))}</td>`);
+
+    const postCentralizerExtras = [];
+    if (showSG) postCentralizerExtras.push(`<td>${formatSmallGroup(c.centralizer_small_group)}</td>`);
+
+    const tailExtras = [];
+    if (showPM) tailExtras.push(`<td>${escapeHtml(String(c.power_map ?? ""))}</td>`);
+    if (showPC) tailExtras.push(`<td style="text-align:right;">${escapeHtml(String(c.power_classes ?? ""))}</td>`);
+    if (showRE) tailExtras.push(`<td>${formatClassReps(c.representative ?? "")}</td>`);
 
     return `
       <tr>
         <td>${escapeHtml(c.id ?? "")}</td>
-        <td>${renderMath(c.centralizer_shape ?? "")}</td>
+        ${middleExtras.join("")}
         <td style="text-align:right;">${escapeHtml(String(c.centralizer_order ?? ""))}</td>
+        <td>${renderMath(c.centralizer_shape ?? "")}</td>
+        ${postCentralizerExtras.join("")}
         <td>${formatPowerUp ? formatPowerUp(c.power_up) : escapeHtml(String(c.power_up ?? ""))}</td>
-        ${extras.join("")}
+        ${tailExtras.join("")}
       </tr>
     `;
   }).join("");
@@ -173,10 +185,12 @@ function renderTable(classInfo, state) {
       <thead>
         <tr>
           <th>Class</th>
-          <th>Centralizer</th>
+          ${middleHeadExtras.join("")}
           <th>Centralizer order</th>
+          <th>Centralizer</th>
+          ${postCentralizerHeadExtras.join("")}
           <th>Power up</th>
-          ${headExtras.join("")}
+          ${tailHeadExtras.join("")}
         </tr>
       </thead>
       <tbody>
