@@ -34,4 +34,3 @@ document.getElementById("page-header").innerHTML =
   `<h1>ATLAS of Finite Groups V4</h1><nav id="breadcrumbs">Loading breadcrumbs...</nav>`;
 
 renderBreadcrumbsForTypePage(); // Add breadcrumbs
-setupCollapsibleHeader(document.getElementById("page-header"));
