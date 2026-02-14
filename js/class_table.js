@@ -85,24 +85,24 @@ function renderControls(state) {
       <fieldset style="border: 1px solid #ddd; padding: 0.5rem; border-radius: 6px;">
         <legend style="padding: 0 0.25rem;">Show columns</legend>
         <label style="margin-right: 1rem;">
-          <input type="checkbox" id="cc-le" ${state.showLength ? "checked" : ""}>
-          Length
-        </label>
-        <label style="margin-right: 1rem;">
           <input type="checkbox" id="cc-or" ${state.showOrder ? "checked" : ""}>
           Element Order
+        </label>
+        <label style="margin-right: 1rem;">
+          <input type="checkbox" id="cc-le" ${state.showLength ? "checked" : ""}>
+          Length
         </label>
         <label style="margin-right: 1rem;">
           <input type="checkbox" id="cc-sg" ${state.showCentralizerSmallGroup ? "checked" : ""}>
           Centralizer SmallGroup
         </label>
         <label style="margin-right: 1rem;">
-          <input type="checkbox" id="cc-pc" ${state.showPowerClasses ? "checked" : ""}>
-          # power classes
-        </label>
-        <label style="margin-right: 1rem;">
           <input type="checkbox" id="cc-pm" ${state.showPowerMap ? "checked" : ""}>
           Power map
+        </label>
+        <label style="margin-right: 1rem;">
+          <input type="checkbox" id="cc-pc" ${state.showPowerClasses ? "checked" : ""}>
+          # power classes
         </label>
         <label style="margin-right: 1rem;">
           <input type="checkbox" id="cc-re" ${state.showRepresentative ? "checked" : ""}>
@@ -201,3 +201,4 @@ function formatSmallGroup(arr) {
   if (typeof n !== "number" || typeof k !== "number") return "";
   return `SmallGroup(${n},${k})`;
 }
+
