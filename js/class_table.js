@@ -18,6 +18,7 @@ async function displayClassTable(data) {
     showCentralizerSmallGroup: false,
     showPowerClasses: false,
     showPowerMap: false,
+    showRepresentative: false,
     showLength: false,
     showOrder: false,
     filterRationalOnly: false,
@@ -61,6 +62,7 @@ async function displayClassTable(data) {
     bindCheckbox("cc-sg", v => { state.showCentralizerSmallGroup = v; render(); });
     bindCheckbox("cc-pc", v => { state.showPowerClasses = v; render(); });
     bindCheckbox("cc-pm", v => { state.showPowerMap = v; render(); });
+    bindCheckbox("cc-re", v => { state.showRepresentative = v; render(); });
 
 
     // Filters
@@ -102,6 +104,10 @@ function renderControls(state) {
           <input type="checkbox" id="cc-pm" ${state.showPowerMap ? "checked" : ""}>
           Power map
         </label>
+        <label style="margin-right: 1rem;">
+          <input type="checkbox" id="cc-re" ${state.showRepresentative ? "checked" : ""}>
+          Representative
+        </label>
       </fieldset>
 
       <fieldset style="border: 1px solid #ddd; padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem;">
@@ -130,6 +136,7 @@ function renderTable(classInfo, state) {
   const showSG = state.showCentralizerSmallGroup;
   const showPC = state.showPowerClasses;
   const showPM = state.showPowerMap;
+  const showRE = state.showRepresentative;
   const showLE = state.showLength;
   const showOR = state.showOrder;
 
@@ -139,6 +146,7 @@ function renderTable(classInfo, state) {
   if (showSG) headExtras.push(`<th>Centralizer SG</th>`);
   if (showPC) headExtras.push(`<th># classes</th>`);
   if (showPM) headExtras.push(`<th>Power map</th>`);
+  if (showRE) headExtras.push(`<th>Representative</th>`);
 
   const rows = classes.map(c => {
     const extras = [];
@@ -147,6 +155,7 @@ function renderTable(classInfo, state) {
     if (showSG) extras.push(`<td>${formatSmallGroup(c.centralizer_small_group)}</td>`);
     if (showPC) extras.push(`<td style="text-align:right;">${escapeHtml(String(c.power_classes ?? ""))}</td>`);
     if (showPM) extras.push(`<td>${escapeHtml(String(c.power_map ?? ""))}</td>`);
+    if (showRE) extras.push(`<td>${formatClassReps(c.representative ?? "")}</td>`);
 
     return `
       <tr>
@@ -154,7 +163,6 @@ function renderTable(classInfo, state) {
         <td>${renderMath(c.centralizer_shape ?? "")}</td>
         <td style="text-align:right;">${escapeHtml(String(c.centralizer_order ?? ""))}</td>
         <td>${formatPowerUp ? formatPowerUp(c.power_up) : escapeHtml(String(c.power_up ?? ""))}</td>
-        <td>${formatClassReps(c.representative ?? "")}</td>
         ${extras.join("")}
       </tr>
     `;
@@ -168,12 +176,11 @@ function renderTable(classInfo, state) {
           <th>Centralizer</th>
           <th>Centralizer order</th>
           <th>Power up</th>
-          <th>Representative</th>
           ${headExtras.join("")}
         </tr>
       </thead>
       <tbody>
-        ${rows || `<tr><td colspan="${5 + headExtras.length}">No classes match the current filters.</td></tr>`}
+        ${rows || `<tr><td colspan="${4 + headExtras.length}">No classes match the current filters.</td></tr>`}
       </tbody>
     </table>
   `;
