@@ -92,8 +92,66 @@ if (!navPanel) {
   document.body.appendChild(navPanel);
 }
 
+if (!document.getElementById('nav-panel-style')) {
+  const navStyle = document.createElement('style');
+  navStyle.id = 'nav-panel-style';
+  navStyle.textContent = `
+    #nav-panel {
+      position: fixed;
+      top: 8rem;
+      right: 0;
+      z-index: 1000;
+      width: 15rem;
+      max-height: calc(100vh - 9rem);
+      overflow-y: auto;
+      background: #fff;
+      border: 1px solid #d8d8d8;
+      border-right: 0;
+      border-radius: 0.5rem 0 0 0.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      padding: 0.75rem 1rem;
+      transition: width 0.2s ease, padding 0.2s ease;
+    }
+
+    #nav-panel h3 {
+      margin: 0;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    #nav-panel ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1rem;
+    }
+
+    #nav-panel.collapsed {
+      width: 6.75rem;
+      padding: 0.75rem;
+      overflow: hidden;
+    }
+
+    #nav-panel.collapsed ul {
+      display: none;
+    }
+
+    #nav-panel.collapsed:hover,
+    #nav-panel.collapsed:focus-within {
+      width: 15rem;
+      padding: 0.75rem 1rem;
+      overflow-y: auto;
+    }
+
+    #nav-panel.collapsed:hover ul,
+    #nav-panel.collapsed:focus-within ul {
+      display: block;
+    }
+  `;
+  document.head.appendChild(navStyle);
+}
+
 const navpaneldata = renderNavPanelHTML(data);
 navPanel.innerHTML = navpaneldata.html;
+navPanel.classList.add('collapsed');
 setupScrollHighlighting(navpaneldata.sections);
 
   }
