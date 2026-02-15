@@ -23,6 +23,7 @@ async function displayClassTable(data) {
     showOrder: false,
     filterRationalOnly: false,
     filterRealOnly: false,
+    numberDisplay: "integer",
   };
 
   render();
@@ -68,12 +69,23 @@ async function displayClassTable(data) {
     // Filters
     bindCheckbox("f-rat", v => { state.filterRationalOnly = v; render(); });
     bindCheckbox("f-real", v => { state.filterRealOnly = v; render(); });
+
+    bindSelect("cc-number-display", v => {
+      state.numberDisplay = v === "factorization" ? "factorization" : "integer";
+      render();
+    });
   }
 
   function bindCheckbox(id, onChange) {
     const el = container.querySelector(`#${id}`);
     if (!el) return;
     el.addEventListener("change", () => onChange(!!el.checked));
+  }
+
+  function bindSelect(id, onChange) {
+    const el = container.querySelector(`#${id}`);
+    if (!el) return;
+    el.addEventListener("change", () => onChange(el.value));
   }
 }
 
@@ -108,6 +120,15 @@ function renderControls(state) {
           <input type="checkbox" id="cc-re" ${state.showRepresentative ? "checked" : ""}>
           Representative
         </label>
+      </fieldset>
+
+      <fieldset style="border: 1px solid #ddd; padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem;">
+        <legend style="padding: 0 0.25rem;">Display format</legend>
+        <label style="margin-right: 0.5rem;" for="cc-number-display">Length/Centralizer order:</label>
+        <select id="cc-number-display">
+          <option value="integer" ${state.numberDisplay === "integer" ? "selected" : ""}>Integer</option>
+          <option value="factorization" ${state.numberDisplay === "factorization" ? "selected" : ""}>Factorization</option>
+        </select>
       </fieldset>
 
       <fieldset style="border: 1px solid #ddd; padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem;">
@@ -157,7 +178,7 @@ function renderTable(classInfo, state) {
   const rows = classes.map(c => {
     const middleExtras = [];
     if (showOR) middleExtras.push(`<td style="text-align:right;">${escapeHtml(String(c.order ?? ""))}</td>`);
-    if (showLE) middleExtras.push(`<td style="text-align:right;">${escapeHtml(String(c.length ?? ""))}</td>`);
+    if (showLE) middleExtras.push(`<td style="text-align:right;">${renderFactoredCell(c, state.numberDisplay, "length", "factored_length")}</td>`);
 
     const postCentralizerExtras = [];
     if (showSG) postCentralizerExtras.push(`<td>${formatSmallGroup(c.centralizer_small_group)}</td>`);
@@ -171,7 +192,7 @@ function renderTable(classInfo, state) {
       <tr>
         <td>${escapeHtml(c.id ?? "")}</td>
         ${middleExtras.join("")}
-        <td style="text-align:right;">${escapeHtml(String(c.centralizer_order ?? ""))}</td>
+        <td style="text-align:right;">${renderFactoredCell(c, state.numberDisplay, "centralizer_order", "factored_centralizer_order")}</td>
         <td>${renderMath(c.centralizer_shape ?? "")}</td>
         ${postCentralizerExtras.join("")}
         <td>${formatPowerUp ? formatPowerUp(c.power_up) : escapeHtml(String(c.power_up ?? ""))}</td>
