@@ -26,7 +26,29 @@ function formatSmallGroup(arr) {
   return `SmallGroup(${n},${k})`;
 }
 
+function formatAbelianGroup(value) {
+  if (!Array.isArray(value)) return "";
+  if (value.length === 0) return renderMath("$1$");
 
+  const counts = new Map();
+  const order = [];
+
+  for (const x of value) {
+    const q = String(x);
+    if (!counts.has(q)) {
+      counts.set(q, 0);
+      order.push(q);
+    }
+    counts.set(q, counts.get(q) + 1);
+  }
+
+  const parts = order.map(q => {
+    const n = counts.get(q);
+    return n === 1 ? q : `${q}^${n}`;
+  });
+
+  return renderMath(`$${parts.join(' \\times ')}$`);
+}
 
 ///////////////////////////////////
 // Displaying maths
@@ -142,7 +164,6 @@ function stripMathDelimiters(s) {
     .replace(/\s+/g, " ")
     .trim();
 }
-
 
 
 ///////////////////////////////////
@@ -492,6 +513,7 @@ function renderNavPanelHTML(data) {
   let navHTML = `<h3>Navigate</h3><ul>`;
   navHTML += `<li><a href="#top">Group properties</a></li>`; const presentSections = ["top"];
   if (data.standard_generators) { navHTML += `<li><a href="#std-gens-head">Standard generators</a></li>`; presentSections.push("std-gens-head"); }
+     if (data.sylow_information)	{ navHTML += `<li><a href="#sylow-head">Sylow information</a></li>`; presentSections.push("sylow-head"); }
   if (data.maximals_information) { navHTML += `<li><a href="#max-head">Maximal subgroups</a></li>`; presentSections.push("max-head"); }
   if (data.class_information) { navHTML += `<li><a href="#class-head">Conjugacy classes</a></li>`; presentSections.push("class-head"); }
   if (data.character_information) { navHTML += `<li><a href="#char-head">Character table</a></li>`; presentSections.push("char-head"); }
@@ -501,6 +523,122 @@ function renderNavPanelHTML(data) {
   navHTML += `</ul>`;
   return { html: navHTML, sections: presentSections };
 }
+
+///////////////////////////////////
+// Sylow information table
+///////////////////////////////////
+
+async function displaySylowInformation(data) {
+  if (!data?.sylow_information) return;
+
+  const container = document.getElementById("sylow-table");
+  if (!container) return;
+
+  const sylowInfo = await fetch(`./${data.sylow_information}`, { cache: "no-store" })
+    .then(r => {
+      if (!r.ok) throw new Error(`Failed to fetch ${data.sylow_information}: ${r.status}`);
+      return r.json();
+    });
+
+  const html = renderSylowTable(sylowInfo);
+  if (window.setHTML) {
+    await setHTML(container, html);
+  } else {
+    container.innerHTML = html;
+    if (window.typesetFresh) await typesetFresh(container);
+  }
+}
+
+
+function renderSylowTable(sylowInfo) {
+  const dividingPrimes = Array.isArray(sylowInfo?.dividing_primes)
+    ? sylowInfo.dividing_primes
+    : [];
+
+
+
+  const rows = [
+    {
+          label: "Order",
+          key: "order_exponents",
+          formatCell: (value, prime) => {
+            if (value == null || prime == null || value === "") return "";
+            return formatPowerUp(`${prime}^${value}`);
+          }
+    },
+    {
+          label: "Small Group",
+          key: "small_groups",
+          formatCell: value => {
+            if (value[0] == 0) return "-";
+            return formatSmallGroup(value);
+          }
+    },
+    {
+          label: "Exponent",
+          key: "exponents",
+          formatCell: (value, prime) => {
+            if (value == null || prime == null || value === "") return "";
+            if (value == 1) return formatPowerUp(`${prime}^ `);
+            return formatPowerUp(`${prime}^${value}`);
+          }
+    },
+    { label: "Nilpotence class", key: "nilpotence_classes" },
+    { label: "Number of generators", key: "num_generators" },
+    { label: "p-rank", key: "ranks" },
+    { label: "Normal p-rank", key: "normal_ranks" },
+    { label: "Sectional p-rank", key: "sectional_ranks", skipIfNull: true },
+    { label: "Number of classes", key: "number_of_classes", skipIfNull: true },
+    {
+          label: "Abelianization",
+          key: "abelianizations",
+          formatCell: value => formatAbelianGroup(value)
+    },
+    {
+          label: "Centre",
+          key: "centres",
+          formatCell: (value) => formatAbelianGroup(value)
+    },
+    { label: "Derived length", key: "derived_lengths", skipIfNull: true }
+  ].filter(row => !(row.skipIfNull && sylowInfo?.[row.key] == null));
+
+  const header = dividingPrimes
+    .map(p => `<th>Prime ${escapeHtml(String(p))}</th>`)
+    .join("");
+
+  const body = rows
+    .map(row => {
+      const values = Array.isArray(sylowInfo?.[row.key])
+        ? sylowInfo[row.key]
+        : [];
+
+      const cells = dividingPrimes
+            .map((prime, idx) => {
+              const value = values[idx];
+              if (row.formatCell) return `<td>${row.formatCell(value, prime)}</td>`;
+              return `<td>${escapeHtml(String(value ?? ""))}</td>`;
+            })
+        .join("");
+
+      return `<tr><td>${escapeHtml(row.label)}</td>${cells}</tr>`;
+    })
+    .join("");
+
+  return `
+    <table class="sylow-table">
+      <thead>
+        <tr>
+          <th>Property</th>
+          ${header}
+        </tr>
+      </thead>
+      <tbody>
+        ${body}
+      </tbody>
+    </table>
+  `;
+}
+
 
 ///////////////////////////////////
 // MathJax stuff

@@ -28,6 +28,10 @@ setupCollapsibleHeader(header);
       ${renderGroupProperties(data)}
       ${renderVariantSelectorShell(data)}
       ${renderStandardGenerators(data)}
+      ${data.sylow_information ? `
+        <h2 id="sylow-head">Sylow information</h2>
+        <div id="sylow-table">Loading...</div>
+      ` : ''}
       ${data.maximals_information ? `
         <h2 id="max-head">Maximal subgroups</h2>
         <div id="max-table">Loading...</div>
@@ -58,6 +62,10 @@ setupCollapsibleHeader(header);
 
     if (data.variants && data.variants.length > 1) {
       await initVariantSelector(data, window.location.pathname.split('/').pop());
+    }
+
+    if (data.sylow_information && window.displaySylowInformation) {
+      await displaySylowInformation(data);
     }
 
     if (data.maximals_information && window.displayMaxTable) {
@@ -92,6 +100,7 @@ if (!navPanel) {
   navPanel.id = 'nav-panel';
   document.body.appendChild(navPanel);
 }
+
 
 const navpaneldata = renderNavPanelHTML(data);
 navPanel.innerHTML = navpaneldata.html;
