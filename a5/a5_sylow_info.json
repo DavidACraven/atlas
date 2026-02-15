@@ -1,0 +1,25 @@
+{
+  "id": "a5_sylow_info.json",
+  "group": "a5",
+  "dividing_primes": [ 2 ],
+  "order_exponents": [ 2 ],
+  "exponents": [ 1 ],
+  "nilpotence_classes": [ 1 ],
+  "centres": [
+[ 2, 2 ]
+],
+  "sectional_ranks": [ 2 ],
+  "ranks": [ 2 ],
+  "normal_ranks": [ 2 ],
+  "num_generators": [ 2 ],
+  "number_of_classes": [ 4 ],
+  "abelianizations": [
+[ 2, 2 ]
+],
+  "derived_lengths": [ 1 ],
+  "small_groups": [ [ 4, 2 ] ],
+  "file_version": 1,
+  "version_history": "v1: first version",
+  "sources": "Automated using Magma V2.28-21.",
+  "last_updated": "2026-02-15"
+}
