@@ -463,6 +463,18 @@ function formatPowerUp(s) {
   return s.replace(/\^([0-9-]*)/g, '<sup>$1</sup>').replace(/\./g, '·');
 }
 
+function renderFactoredCell(record, mode, integerKey, factoredKey) {
+  const value = record?.[integerKey];
+  const factoredValue = record?.[factoredKey];
+  const hasFactoredValue = factoredValue !== undefined && factoredValue !== null && factoredValue !== "";
+
+  if (mode === "factorization" && hasFactoredValue) {
+    return formatPowerUp(String(factoredValue));
+  }
+
+  return escapeHtml(String(value ?? ""));
+}
+
 function formatClassReps(s) {
   s = s
         .replace(/\(/,'</i>\(<i>')

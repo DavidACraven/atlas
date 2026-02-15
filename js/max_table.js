@@ -285,6 +285,7 @@ async function displayMaxTable(data) {
 
   const state = {
     showSmallGroup: false,
+    orderDisplay: "integer",
   };
 
   await render();
@@ -345,6 +346,14 @@ container.addEventListener("click", (e) => {
         render();
       });
     }
+
+    const orderSel = container.querySelector("#mx-order-display");
+    if (orderSel) {
+      orderSel.addEventListener("change", () => {
+        state.orderDisplay = orderSel.value === "factorization" ? "factorization" : "integer";
+        render();
+      });
+    }
   }
 }
 
@@ -352,11 +361,19 @@ function renderMaxControls(state) {
   return `
     <details class="controls-accordion">
       <summary>Table options</summary>
-      <div style="margin-top:0.5rem;">
-        <label>
-          <input type="checkbox" id="mx-sg" ${state.showSmallGroup ? "checked" : ""}>
-          Show SmallGroup id
-        </label>
+      <div class="table-controls" style="margin: 0.5rem 0 0.75rem 0;">
+        <fieldset style="border: 1px solid #ddd; padding: 0.5rem; border-radius: 6px;">
+          <legend style="padding: 0 0.25rem;">Display</legend>
+          <label style="margin-right: 1rem;">
+            <input type="checkbox" id="mx-sg" ${state.showSmallGroup ? "checked" : ""}>
+            Show SmallGroup id
+          </label>
+          <label style="margin-right: 0.5rem;" for="mx-order-display">Order/Index format:</label>
+          <select id="mx-order-display">
+            <option value="integer" ${state.orderDisplay === "integer" ? "selected" : ""}>Integer</option>
+            <option value="factorization" ${state.orderDisplay === "factorization" ? "selected" : ""}>Factorization</option>
+          </select>
+        </fieldset>
       </div>
     </details>
   `;
@@ -369,6 +386,8 @@ function renderMaxTable(maxInfo, state) {
 
   const rows = (maxInfo.maximals || []).map((m,i) => {
     const sgCell = showSG ? `<td>${formatSmallGroup(m.maximal_small_group)}</td>` : ``;
+    const orderCell = renderFactoredCell(m, state.orderDisplay, "order", "factored_order");
+    const indexCell = renderFactoredCell(m, state.orderDisplay, "index", "factored_index");
 
   const slpAvail = Array.isArray(m.slp) && m.slp.length;
   const progCell = slpAvail
@@ -388,8 +407,8 @@ function renderMaxTable(maxInfo, state) {
     return `
       <tr>
         <td>${renderMath(m.name ?? "")}</td>
-        <td style="text-align:right;">${escapeHtml(String(m.order ?? ""))}</td>
-        <td style="text-align:right;">${escapeHtml(String(m.index ?? ""))}</td>
+        <td style="text-align:right;">${orderCell}</td>
+        <td style="text-align:right;">${indexCell}</td>
         ${sgCell}
         <td>${progCell}</td>
       </tr>
