@@ -172,9 +172,11 @@ function renderCharTableHTML(groupData, charData, symbols, state) {
   const body = `<tbody>${rows}</tbody>`;
 
   return `
-    <table class="char-table">
-      ${head}
-      ${body}
-    </table>
+    <div class="char-table-scroll">
+      <table class="char-table">
+        ${head}
+        ${body}
+      </table>
+    </div>
   `;
 }
