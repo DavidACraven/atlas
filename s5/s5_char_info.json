@@ -1,0 +1,101 @@
+{
+  "id": "s5_char_info",
+  "group": "s5",
+  "indicators": [ 1, 1, 1, 1, 1, 1, 1 ],
+  "degrees": [ 1, 1, 4, 4, 5, 5, 6 ],
+  "characters": [
+   {
+      "id": "chi1",
+      "atlas_id": "chi1,0",
+      "partition_id": [5],
+      "degree": 1,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": [ "1", "1", "1", "1", "1", "1", "1" ],
+      "notes": "Trivial character"
+   },
+    {
+      "id": "chi2",
+      "atlas_id": "chi1,1",
+      "partition_id": [1,1,1,1,1],
+      "degree": 1,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["1", "1", "-1", "1", "-1", "1", "-1" ]
+    },
+    {
+      "id": "chi3",
+      "atlas_id": "chi4,0",
+      "partition_id": [4,1],
+      "degree": 4,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["4", "0", "2", "1", "0", "-1", "-1" ]
+    },
+    {
+      "id": "chi4",
+      "atlas_id": "chi4,1",
+      "partition_id": [2,1,1,1],
+      "degree": 4,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["4", "0", "-2", "1", "0", "-1", "1" ]
+    },
+    {
+      "id": "chi5",
+      "atlas_id": "chi5_0",
+      "partition_id": [3,2],
+      "degree": 5,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["5", "1", "1", "-1", "-1", "0", "1" ]
+    },
+    {
+      "id": "chi6",
+      "atlas_id": "chi5_1",
+      "partition_id": [2,2,1],
+      "degree": 5,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["5", "1", "-1", "-1", "1", "0", "-1" ]
+    },
+    {
+      "id": "chi7",
+      "atlas_id": "chi2+",
+      "partition_id": [3,1,1],
+      "degree": 6,
+      "irreducible": true,
+      "indicator": 1,
+      "field": "Q",
+      "kernel_subgroup": 1,
+      "schur_index": 1,
+      "values": ["6", "-2", "0", "0", "0", "1", "0" ]
+    }
+  ],
+  "creator": "David Craven",
+  "creation_date": "2025-08-06",
+  "status": "active",
+  "atlas_version": "4.0",
+  "file_version": 1,
+  "version_history": "v1: first version",
+  "sources": "Magma V2.28-21 for character table, except for any non-quadratic field extensions, which were computed by hand from Magma data.",
+  "last_updated": "2025-08-06"
+}

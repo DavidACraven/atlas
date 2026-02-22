@@ -1,0 +1,97 @@
+{
+  "id": "s5_brauer_3_info",
+  "group": "s5",
+  "prime": 3,
+  "degrees": [ 1, 1, 4, 4, 6 ],
+  "characters": [
+   {
+      "id": "phi1",
+      "degree": 1,
+      "irreducible": true,
+      "field": "GF(3)",
+      "values": ["1","1","1","0","1","1","0"]
+    },
+   {
+      "id": "phi2",
+      "degree": 1,
+      "irreducible": true,
+      "field": "GF(3)",
+      "values": ["1","1","-1","0","-1","1","0"]
+    },
+   {
+      "id": "phi3",
+      "degree": 4,
+      "irreducible": true,
+      "field": "GF(3)",
+      "values": ["4","0","2","0","0","-1","0"]
+    },
+   {
+      "id": "phi4",
+      "degree": 4,
+      "irreducible": true,
+      "field": "GF(3)",
+      "values": ["4","0","-2","0","0","-1","0"]
+    },
+   {
+      "id": "phi5",
+      "degree": 6,
+      "irreducible": true,
+      "field": "GF(3)",
+      "values": ["6","-2","0","0","0","1","0"]
+    }
+  ],
+   "blocks": [
+   {
+      "id": "b1",
+      "kg": 3,
+      "lg": 2,
+      "defect": 1,
+      "defect_group": "3",
+      "principal": true,
+      "ordinary_characters": ["chi1", "chi4", "chi6"],
+      "modular_characters": ["phi1", "phi4"],
+      "decomposition_matrix": [[1,0],[0,1],[1,1]],
+      "cartan_matrix": [[2,1],[1,2]],
+      "ext_1_matrix": [[0,1],[1,0]],
+      "projectives": [[[1],[2],[1]],
+[[2],[1],[2]]]
+   },
+   {
+      "id": "b2",
+      "kg": 3,
+      "lg": 2,
+      "defect": 1,
+      "defect_group": "3",
+      "principal": false,
+      "ordinary_characters": ["chi2", "chi3", "chi5"],
+      "modular_characters": ["phi2", "phi3"],
+      "decomposition_matrix": [[1,0],[0,1],[1,1]],
+      "cartan_matrix": [[2,1],[1,2]],
+      "ext_1_matrix": [[0,1],[1,0]],
+      "projectives": [[[1],[2],[1]],
+[[2],[1],[2]]]
+   },
+   {
+      "id": "b3",
+      "kg": 1,
+      "lg": 1,
+      "defect": 0,
+      "defect_group": "1",
+      "principal": false,
+      "ordinary_characters": ["chi7"],
+      "modular_characters": ["phi5"],
+      "decomposition_matrix": [[1]],
+      "cartan_matrix": [[1]],
+      "ext_1_matrix": [[0]],
+      "projectives": [[[1]]]
+   }
+  ],
+  "creator": "David Craven",
+  "creation_date": "2025-08-06",
+  "status": "active",
+  "atlas_version": "4.0",
+  "file_version": 1,
+  "version_history": "v1: first version",
+  "sources": "Automated using Magma V2.28-21.",
+  "last_updated": "2025-08-06"
+}

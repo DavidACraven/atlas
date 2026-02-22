@@ -1,0 +1,101 @@
+[
+  {
+    "id": "s5_lin_2_4_1",
+    "characteristic": 2,
+    "field": 2,
+    "degree": 4,
+    "irreducibility": "Absolutely irreducible",
+    "1-cohomology": 0,
+    "2-cohomology": 0,
+    "character": "phi2",
+    "file": "s5_lin_2_4_1.json"
+  },
+  {
+    "id": "s5_lin_2_4_2",
+    "characteristic": 2,
+    "field": 2,
+    "degree": 4,
+    "irreducibility": "Absolutely irreducible",
+    "1-cohomology": 1,
+    "2-cohomology": 0,
+    "character": "phi3",
+    "file": "s5_lin_2_4_2.json"
+  },
+  {
+    "id": "s5_lin_3_4_1",
+    "characteristic": 3,
+    "field": 3,
+    "degree": 4,
+    "irreducibility": "Absolutely irreducible",
+    "1-cohomology": 0,
+    "2-cohomology": 0,
+    "character": "phi3",
+    "file": "s5_lin_3_4_1.json"
+  },
+  {
+    "id": "s5_lin_3_4_2",
+    "characteristic": 3,
+    "field": 3,
+    "degree": 4,
+    "irreducibility": "Absolutely irreducible",
+    "1-cohomology": 1,
+    "2-cohomology": 1,
+    "character": "phi4",
+    "file": "s5_lin_3_4_2.json"
+  },
+  {
+    "id": "s5_lin_3_6_1",
+    "characteristic": 3,
+    "field": 3,
+    "degree": 6,
+    "irreducibility": "Absolutely irreducible",
+    "1-cohomology": 0,
+    "2-cohomology": 0,
+    "character": "phi5",
+    "file": "s5_lin_3_6_1.json"
+  },
+  {
+    "id": "s5_lin_5_3_1",
+    "characteristic": 5,
+    "field": 5,
+    "degree": 3,
+    "irreducibility": "Absolutely irreducible",
+    "1-cohomology": 1,
+    "2-cohomology": 0,
+    "character": "phi3",
+    "file": "s5_lin_5_3_1.json"
+  },
+  {
+    "id": "s5_lin_5_3_2",
+    "characteristic": 5,
+    "field": 5,
+    "degree": 3,
+    "irreducibility": "Absolutely irreducible",
+    "1-cohomology": 0,
+    "2-cohomology": 1,
+    "character": "phi4",
+    "file": "s5_lin_5_3_2.json"
+  },
+  {
+    "id": "s5_lin_5_5_1",
+    "characteristic": 5,
+    "field": 5,
+    "degree": 5,
+    "irreducibility": "Absolutely irreducible",
+    "1-cohomology": 0,
+    "2-cohomology": 0,
+    "character": "phi5",
+    "file": "s5_lin_5_5_1.json"
+  },
+  {
+    "id": "s5_lin_5_5_2",
+    "characteristic": 5,
+    "field": 5,
+    "degree": 5,
+    "irreducibility": "Absolutely irreducible",
+    "1-cohomology": 0,
+    "2-cohomology": 0,
+    "character": "phi6",
+    "file": "s5_lin_5_5_2.json"
+  }
+]

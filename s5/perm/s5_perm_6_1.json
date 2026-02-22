@@ -1,0 +1,24 @@
+{
+  "id": "s5_perm_6_1",
+  "name": "Permutation representation of Symmetric group $S_5=A_5:2$ on 6 points",
+  "generators_format": ["cycle", "array"],
+  "generators": {
+    "cycle": [ "(1, 2)(3, 4)(5, 6)", "(1, 3, 4, 5)" ],
+    "array": [ [2,1,4,3,6,5], [3,2,4,5,1,6] ]
+  },
+  "degree": 6,
+  "type": "primitive",
+  "rank": 2,
+  "suborbit_lengths": [1,5],
+  "constituents": {"chi1": 1, "chi6": 1},
+  "point_stabilizer": "$5:4$",
+  "cycle_types": ["1^6","2^2,1^2","2^3","3^2","4,1^2","5,1","6"],
+  "creator": "David Craven",
+  "creation_date": "2025-08-06",
+  "status": "active",
+  "atlas_version": "4.0",
+  "file_version": 1,
+  "version_history": "v1: first version",
+  "sources": "Automated using Magma V2.28-21.",
+  "last_updated": "2025-08-06"
+}

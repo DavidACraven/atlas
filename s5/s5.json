@@ -1,0 +1,36 @@
+{
+  "id": "s5",
+  "name": "Symmetric group $S_5=A_5:2$",
+  "type": "alternating",
+  "associated_simple": "a5",
+  "order": 120,
+  "factored_order": "2^3.3.5",
+  "dividing_primes": [ 2, 3, 5 ],
+  "schur_multiplier": "2",
+  "outer_automorphism_group": "1",
+  "standard_generators": [["c","2B"],["d","4"],["cd","5"]],
+  "number_of_classes": 7,
+  "class_names": ["1A","2A","2B","3A","4A","5AB","6A"],
+  "outer_class_names": ["1A","1A","2A","1A","2A","1A","2A"],
+  "class_information": "s5_class_info.json",
+  "character_information": "s5_char_info.json",
+  "brauer_information": {
+    "2": "s5_brauer_2.json",
+    "3": "s5_brauer_3.json",
+    "5": "s5_brauer_5.json"  },
+  "maximals_information": "s5_maxes_info.json",
+  "symbol_definitions": "../symbols.json",
+  "group_list": "../group_list.json",
+  "representations": {
+    "permutation": "perm/",
+    "linear": "lin/"
+  },
+  "creator": "David Craven",
+  "creation_date": "2025-08-06",
+  "status": "active",
+  "atlas_version": "4.0",
+  "file_version": 1,
+  "version_history": "v1: first version",
+  "sources": "Automated using Magma V2.28-21.",
+  "last_updated": "2025-08-06"
+}

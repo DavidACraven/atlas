@@ -1,0 +1,24 @@
+{
+  "id": "s5_perm_10_1",
+  "name": "Permutation representation of Symmetric group $S_5=A_5:2$ on 10 points",
+  "generators_format": ["cycle", "array"],
+  "generators": {
+    "cycle": [ "(1, 2)(3, 4)(5, 6)", "(1, 9, 10, 6)(2, 4, 5, 8)(3, 7)" ],
+    "array": [ [2,1,4,3,6,5,7,8,9,10], [9,4,7,5,8,1,3,2,10,6] ]
+  },
+  "degree": 10,
+  "type": "primitive",
+  "rank": 3,
+  "suborbit_lengths": [1,3,6],
+  "constituents": {"chi1": 1, "chi3": 1, "chi5": 1},
+  "point_stabilizer": "$D_{12}$",
+  "cycle_types": ["1^10","2^4,1^2","2^3,1^4","3^3,1","4^2,2","5^2","6,3,1"],
+  "creator": "David Craven",
+  "creation_date": "2025-08-06",
+  "status": "active",
+  "atlas_version": "4.0",
+  "file_version": 1,
+  "version_history": "v1: first version",
+  "sources": "Automated using Magma V2.28-21.",
+  "last_updated": "2025-08-06"
+}

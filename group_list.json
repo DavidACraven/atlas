@@ -1,0 +1,667 @@
+{
+  "a4": [
+    {
+      "id": "a4",
+      "display": "$A_4$",
+      "description": "Alternating group $A_4$",
+      "pronunciation": "A 4",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "s4",
+      "display": "$S_4$",
+      "description": "Symmetric group $S_4=A_4:2$",
+      "pronunciation": "S 4",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "a5": [
+    {
+      "id": "a5",
+      "display": "$A_5$",
+      "description": "Alternating group $A_5$",
+      "pronunciation": "A 5",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "s5",
+      "display": "$S_5$",
+      "description": "Symmetric group $S_5$",
+      "pronunciation": "S five",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "a6": [
+    {
+      "id": "a6",
+      "display": "$A_6$",
+      "description": "Alternating group $A_6$",
+      "pronunciation": "A six",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "s6",
+      "display": "$S_6$",
+      "description": "Symmetric group $S_6$",
+      "pronunciation": "S six",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "pgl2(9)",
+      "display": "$PGL_2(9)$",
+      "description": "Projective general linear group $PGL_2(9)$",
+      "pronunciation": "P G L 2 9",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "m10",
+      "display": "$M_{10} = A_6.2_3$",
+      "description": "Mathieu group $M_{10}=A_6.2_3$",
+      "pronunciation": "M 10",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "a6-22",
+      "display": "$Aut(A_6) = A_6.2^2$",
+      "description": "Automorphism group $Aut(A_6)$",
+      "pronunciation": "aut A 6",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "a7": [
+    {
+      "id": "a7",
+      "display": "$A_7$",
+      "description": "Alternating group $A_7$",
+      "pronunciation": "A seven",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "s7",
+      "display": "$S_7$",
+      "description": "Symmetric group $S_7$",
+      "pronunciation": "S seven",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "a8": [
+    {
+      "id": "a8",
+      "display": "$A_8$",
+      "description": "Alternating group $A_8$",
+      "pronunciation": "A eight",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "s8",
+      "display": "$S_8$",
+      "description": "Symmetric group $S_8$",
+      "pronunciation": "S eight",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "a9": [
+    {
+      "id": "a9",
+      "display": "$A_9$",
+      "description": "Alternating group $A_9$",
+      "pronunciation": "A nine",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "s9",
+      "display": "$S_9$",
+      "description": "Symmetric group $S_9$",
+      "pronunciation": "S nine",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "a10": [
+    {
+      "id": "a10",
+      "display": "$A_{10}$",
+      "description": "Alternating group $A_{10}$",
+      "pronunciation": "A ten",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "s10",
+      "display": "$S_{10}$",
+      "description": "Symmetric group $S_{10}$",
+      "pronunciation": "S ten",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "a11": [
+    {
+      "id": "a11",
+      "display": "$A_{11}$",
+      "description": "Alternating group $A_{11}$",
+      "pronunciation": "A eleven",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "s11",
+      "display": "$S_{11}$",
+      "description": "Symmetric group $S_{11}$",
+      "pronunciation": "S eleven",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "a12": [
+    {
+      "id": "a12",
+      "display": "$A_{12}$",
+      "description": "Alternating group $A_{12}$",
+      "pronunciation": "A twelve",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "a13": [
+    {
+      "id": "a13",
+      "display": "$A_{13}$",
+      "description": "Alternating group $A_{13}$",
+      "pronunciation": "A thirteen",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "No Ext matrices for characteristics 2 and 3",
+      "permutation_representations": "All primitive up to 500000 points",
+      "linear_representations": "All irreducibles in positive characteristic up to dimension 4000"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l2(7)": [
+    {
+      "id": "l2(7)",
+      "display": "$L_2(7)$",
+      "description": "Projective special linear group $L_2(7)$",
+      "pronunciation": "L 2 7",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "pgl2(7)",
+      "display": "$PGL_2(7)$",
+      "description": "Projective general linear group $PGL_2(7)$",
+      "pronunciation": "P G L 2 7",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l2(8)": [
+    {
+      "id": "l2(8)",
+      "display": "$L_2(8)$",
+      "description": "Projective special linear group $L_2(8)$",
+      "pronunciation": "L 2 8",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "l2(8)-3",
+      "display": "$L_2(8):3$",
+      "description": "Projective special semilinear group $PΣL_2(8)=L_2(8):3$",
+      "pronunciation": "L 2 8 dot 3",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l2(11)": [
+    {
+      "id": "l2(11)",
+      "display": "$L_2(11)$",
+      "description": "Projective special linear group $L_2(11)$",
+      "pronunciation": "L 2 11",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "pgl2(11)",
+      "display": "$PGL_2(11)$",
+      "description": "Projective general linear group $PGL_2(11)$",
+      "pronunciation": "P G L 2 11",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l2(13)": [
+    {
+      "id": "l2(13)",
+      "display": "$L_2(13)$",
+      "description": "Projective special linear group $L_2(13)$",
+      "pronunciation": "L 2 13",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "pgl2(13)",
+      "display": "$PGL_2(13)$",
+      "description": "Projective general linear group $PGL_2(13)$",
+      "pronunciation": "P G L 2 13",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l2(16)": [
+    {
+      "id": "l2(16)",
+      "display": "$L_2(16)$",
+      "description": "Projective special linear group $L_2(16)$",
+      "pronunciation": "L 2 16",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l2(17)": [
+    {
+      "id": "l2(17)",
+      "display": "$L_2(17)$",
+      "description": "Projective special linear group $L_2(17)$",
+      "pronunciation": "L 2 17",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "pgl2(17)",
+      "display": "$PGL_2(17)$",
+      "description": "Projective general linear group $PGL_2(17)$",
+      "pronunciation": "P G L 2 17",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l2(19)": [
+    {
+      "id": "l2(19)",
+      "display": "$L_2(19)$",
+      "description": "Projective special linear group $L_2(19)$",
+      "pronunciation": "L 2 19",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "pgl2(19)",
+      "display": "$PGL_2(19)$",
+      "description": "Projective general linear group $PGL_2(19)$",
+      "pronunciation": "P G L 2 19",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l2(23)": [
+    {
+      "id": "l2(23)",
+      "display": "$L_2(23)$",
+      "description": "Projective special linear group $L_2(23)$",
+      "pronunciation": "L 2 23",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "pgl2(23)",
+      "display": "$PGL_2(23)$",
+      "description": "Projective general linear group $PGL_2(23)$",
+      "pronunciation": "P G L 2 23",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l2(25)": [
+    {
+      "id": "l2(25)",
+      "display": "$L_2(25)$",
+      "description": "Projective special linear group $L_2(25)$",
+      "pronunciation": "L 2 25",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "pgl2(25)",
+      "display": "$PGL_2(25)$",
+      "description": "Projective general linear group $PGL_2(25)$",
+      "pronunciation": "P G L 2 25",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l2(27)": [
+    {
+      "id": "l2(27)",
+      "display": "$L_2(27)$",
+      "description": "Projective special linear group $L_2(27)$",
+      "pronunciation": "L 2 27",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l2(29)": [
+    {
+      "id": "l2(29)",
+      "display": "$L_2(29)$",
+      "description": "Projective special linear group $L_2(29)$",
+      "pronunciation": "L 2 29",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l2(31)": [
+    {
+      "id": "l2(31)",
+      "display": "$L_2(31)$",
+      "description": "Projective special linear group $L_2(31)$",
+      "pronunciation": "L 2 31",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l2(32)": [
+    {
+      "id": "l2(32)",
+      "display": "$L_2(32)$",
+      "description": "Projective special linear group $L_2(32)$",
+      "pronunciation": "L 2 32",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l3(3)": [
+    {
+      "id": "l3(3)",
+      "display": "$L_3(3)$",
+      "description": "Projective special linear group $L_3(3)$",
+      "pronunciation": "L 3 3",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    },
+    {
+      "id": "l3(3)-2",
+      "display": "$L_3(3):2$",
+      "description": "Almost simple linear group $L_3(3):2$",
+      "pronunciation": "L 3 3 dot 2",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l3(4)": [
+    {
+      "id": "l3(4)",
+      "display": "$L_3(4)$",
+      "description": "Projective special linear group $L_3(4)$",
+      "pronunciation": "L 3 4",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l3(5)": [
+    {
+      "id": "l3(5)",
+      "display": "$L_3(5)$",
+      "description": "Projective special linear group $L_3(5)$",
+      "pronunciation": "L 3 5",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ],
+  "l3(7)": [
+    {
+      "id": "l3(7)",
+      "display": "$L_3(7)$",
+      "description": "Projective special linear group $L_3(7)$",
+      "pronunciation": "L 3 7",
+      "standard_generators": "Yes",
+      "conjugacy_classes": "With representatives",
+      "character_information": "Complete",
+      "modular_information": "Complete",
+      "permutation_representations": "All primitive",
+      "linear_representations": "All irreducibles in positive characteristic"
+      "maximal_subgroups": "All, with SLPs with standard generators if applicable"
+    }
+  ]
+}
