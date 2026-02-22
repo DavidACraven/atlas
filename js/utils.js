@@ -304,7 +304,27 @@ function formatStandardGenerators(generators) {
 // Global widest across page load (as you had)
 let variantSelectorWidest = 0;
 
-async function initVariantSelector(data, currentHtmlFilename) {
+async function loadVariantData(data) {
+  const simpleId = data.associated_simple || data.id;
+  const groupListPath = data.group_list;
+  if (!simpleId || !groupListPath) return [];
+
+  const response = await fetch(groupListPath, { cache: 'no-store' });
+  const raw = await response.text();
+
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    const repaired = raw.replace(/"\s*\n\s*"([^"]+)"\s*:/g, '",\n      "$1":');
+    parsed = JSON.parse(repaired);
+  }
+
+  const variants = parsed?.[simpleId];
+  return Array.isArray(variants) ? variants : [];
+}
+
+async function initVariantSelector(variants, currentHtmlFilename) {
   const container = document.getElementById('variant-selector');
   if (!container) return;
 
@@ -316,24 +336,26 @@ async function initVariantSelector(data, currentHtmlFilename) {
   const optionsBox = container.querySelector('.dropdown-options');
   if (!button || !optionsBox) return;
 
+  if (!variants || variants.length <= 1) return;
+
   const currentId = currentHtmlFilename.replace(/\.html$/i, '');
 
   // Caption
   let caption = 'Select';
-  for (const v of data.variants || []) {
-    if (v['var-id'] === currentId) { caption = v.name; break; }
+  for (const v of variants) {
+    if (v.id === currentId) { caption = v.description; break; }
   }
   button.innerHTML = renderMath(caption);
 
   // Options
   optionsBox.innerHTML = '';
-  for (const v of data.variants || []) {
+  for (const v of variants) {
     const div = document.createElement('div');
     div.className = 'dropdown-item';
-    div.innerHTML = renderMath(v.name);
+    div.innerHTML = renderMath(v.description);
 
     div.addEventListener('click', () => {
-      const id = v['var-id'];
+      const id = v.id;
       if (id && id !== currentId) {
         window.location.href = `../${id}/${id}.html`;
       } else {
@@ -405,8 +427,8 @@ async function typesetOne(el) {
 
 
 
-function renderVariantSelectorShell(data) {
-  if (!data.variants || data.variants.length <= 1) return '';
+function renderVariantSelectorShell(variants) {
+  if (!variants || variants.length <= 1) return '';
 
   return `
     <h2>Variants</h2>

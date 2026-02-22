@@ -8,6 +8,7 @@
     const jsonFilename = htmlFilename.replace(/\.html$/i, '.json');
 
     const data = await fetch(jsonFilename, { cache: 'no-store' }).then(r => r.json());
+    const variants = await loadVariantData(data);
 
     const header = document.getElementById('page-header');
     const main = document.getElementById('main-content');
@@ -26,7 +27,7 @@ setupCollapsibleHeader(header);
       <a id="main-cont" tabindex="-1"></a>
       <h1 id="top">${renderMath(data.name)}</h1>
       ${renderGroupProperties(data)}
-      ${renderVariantSelectorShell(data)}
+      ${renderVariantSelectorShell(variants)}
       ${renderStandardGenerators(data)}
       ${data.sylow_information ? `
         <h2 id="sylow-head">Sylow information</h2>
@@ -60,8 +61,8 @@ setupCollapsibleHeader(header);
     `;
     await setHTML(main, html); // setHTML should typeset
 
-    if (data.variants && data.variants.length > 1) {
-      await initVariantSelector(data, window.location.pathname.split('/').pop());
+    if (variants.length > 1) {
+      await initVariantSelector(variants, window.location.pathname.split('/').pop());
     }
 
     if (data.sylow_information && window.displaySylowInformation) {
