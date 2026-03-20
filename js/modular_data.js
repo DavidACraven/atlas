@@ -99,7 +99,7 @@ function renderBlockInterface(blocks, prime, container, symbols, groupData) {
       });
 
       table.appendChild(tbody);
-      matrixContainer.appendChild(table);
+      matrixContainer.appendChild(wrapScrollableTable(table));
 
       if (block.cartan_matrix) {
         const cartanTitle = document.createElement("h4");
@@ -122,7 +122,7 @@ function renderBlockInterface(blocks, prime, container, symbols, groupData) {
         });
 
         cartanTable.appendChild(cartanBody);
-        matrixContainer.appendChild(cartanTable);
+        matrixContainer.appendChild(wrapScrollableTable(cartanTable));
       }
 
       if (block.ext_1_matrix) {
@@ -146,7 +146,7 @@ function renderBlockInterface(blocks, prime, container, symbols, groupData) {
         });
 
         extTable.appendChild(extBody);
-        matrixContainer.appendChild(extTable);
+        matrixContainer.appendChild(wrapScrollableTable(extTable));
       }
 
       // Typeset any MathJax in character ids etc.
@@ -160,6 +160,13 @@ function renderBlockInterface(blocks, prime, container, symbols, groupData) {
       enableCharTableHighlighting("decomposition-matrix");
     }
   });
+}
+
+function wrapScrollableTable(table) {
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("table-scroll");
+  wrapper.appendChild(table);
+  return wrapper;
 }
 
 async function displayModularData(data) {
@@ -236,6 +243,12 @@ async function displayModularData(data) {
 
       output.appendChild(heading);
       output.appendChild(intro);
+      if (brauerData.notes) {
+        const notes = document.createElement("p");
+        notes.classList.add("brauer-notes");
+        notes.innerHTML = brauerData.notes;
+        output.appendChild(notes);
+      }
 
       const table = document.createElement("table");
       table.classList.add("brauer-char-table");
@@ -272,7 +285,7 @@ async function displayModularData(data) {
         tbody.appendChild(row);
       }
       table.appendChild(tbody);
-      output.appendChild(table);
+      output.appendChild(wrapScrollableTable(table));
 
       // Typeset MathJax in substitute() outputs / character ids
       if (window.typesetFresh) {
