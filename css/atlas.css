@@ -73,7 +73,8 @@ table.sylow-table {
   border: 1px solid #444;
 }
 
-.char-table-scroll {
+.char-table-scroll,
+.table-scroll {
   max-width: 100%;
   overflow-x: auto;
 }
