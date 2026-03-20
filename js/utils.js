@@ -444,11 +444,30 @@ function renderVariantSelectorShell(variants) {
 // Format characters
 ///////////////////////////////////
 
+/*
+function formatCharacterID(id, atlasID = null) {
+  const hasAtlasID = atlasID !== null && atlasID !== undefined && atlasID !== "";
+  const atlasSubscript = hasAtlasID ? `{${escapeHtml(String(atlasID))}}` : null;
 
-function formatCharacterID(id) {
   // Match chi or phi followed by a number, and optionally + between terms
   return id.replace(/(chi|phi)(\d+)/g, (match, prefix, num) => {
     const symbol = prefix === "chi" ? "χ" : "φ";
+    return `${symbol}<sub>${atlasSubscript ?? num}</sub>`;
+  });
+}
+*/
+function formatCharacterID(id, atlasID = null) {
+  const hasAtlasID = atlasID !== null && atlasID !== undefined && atlasID !== "";
+
+  // Match chi or phi followed by a number, and optionally + between terms
+  return id.replace(/(chi|phi)(\d+)/g, (match, prefix, num) => {
+    const symbol = prefix === "chi" ? "χ" : "φ";
+
+    if (hasAtlasID) {
+      const atlasSubscript = String(atlasID).replace(/^(chi|phi)/, "");
+      return `${symbol}<sub>${escapeHtml(atlasSubscript)}</sub>`;
+    }
+
     return `${symbol}<sub>${num}</sub>`;
   });
 }
@@ -485,9 +504,9 @@ function formatPowerUp(s) {
   return s.replace(/\^([0-9-]*)/g, '<sup>$1</sup>').replace(/\./g, '·');
 }
 
-function renderFactoredCell(record, mode, integerKey, factoredKey) {
-  const value = record?.[integerKey];
-  const factoredValue = record?.[factoredKey];
+function renderFactoredCell(maximal, mode, integerKey, factoredKey) {
+  const value = maximal?.[integerKey];
+  const factoredValue = maximal?.[factoredKey];
   const hasFactoredValue = factoredValue !== undefined && factoredValue !== null && factoredValue !== "";
 
   if (mode === "factorization" && hasFactoredValue) {

@@ -45,9 +45,11 @@ async function displayCharTable(groupData) {
     showSchurIndex: false,
     includePlusType: true,
     includeZeroType: true,
-    includeMinusType: true
+    includeMinusType: true,
+    characterSubscriptMode: "index"
   };
 
+  const hasAtlasIDs = (charData.characters || []).some(ch => ch.atlas_id !== undefined && ch.atlas_id !== null && ch.atlas_id !== "");
 
   render();
 
@@ -57,7 +59,7 @@ async function displayCharTable(groupData) {
     const wasOpen = oldAccordion ? oldAccordion.open : false;
 
     const html = `
-      ${renderCharControls(state)}
+      ${renderCharControls(state,hasAtlasIDs)}
       ${renderCharTableHTML(groupData, charData, symbols, state)}
     `;
 
@@ -81,6 +83,7 @@ async function displayCharTable(groupData) {
     bindCheckbox("ct-pt", v => { state.includePlusType = v; render(); });
     bindCheckbox("ct-zt", v => { state.includeZeroType = v; render(); });
     bindCheckbox("ct-mt", v => { state.includeMinusType = v; render(); });
+    bindSelect("ct-subscript-mode", v => { state.characterSubscriptMode = v; render(); });
   }
 
   function bindCheckbox(id, onChange) {
@@ -89,11 +92,16 @@ async function displayCharTable(groupData) {
     el.addEventListener("change", () => onChange(!!el.checked));
   }
 
+  function bindSelect(id, onChange) {
+    const el = container.querySelector(`#${id}`);
+    if (!el) return;
+    el.addEventListener("change", () => onChange(el.value));
+  }
 
 }
 
 
-function renderCharControls(state) {
+function renderCharControls(state,hasAtlasIDs) {
   return `
   <details class="controls-accordion">
     <summary>Table options</summary>
@@ -121,7 +129,16 @@ function renderCharControls(state) {
           Include - characters
         </label>
       </fieldset>
-
+      ${hasAtlasIDs ? `
+      <fieldset style="border: 1px solid #ddd; padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem;">
+        <legend style="padding: 0 0.25rem;">Character labels</legend>
+        <label for="ct-subscript-mode" style="margin-right: 0.5rem;">Subscript:</label>
+        <select id="ct-subscript-mode">
+          <option value="index" ${state.characterSubscriptMode === "index" ? "selected" : ""}>Index</option>
+          <option value="atlas" ${state.characterSubscriptMode === "atlas" ? "selected" : ""}>Atlas index</option>
+        </select>
+      </fieldset>
+      ` : ""}
     </div>
   </details>
   `;
@@ -157,7 +174,7 @@ function renderCharTableHTML(groupData, charData, symbols, state) {
       return true; 
     })
     .map(ch => {
-      const label = `<th>${formatCharacterID(ch.id)}</th>`;
+      const label = `<th>${formatCharacterID(ch.id, state.characterSubscriptMode === "atlas" ? ch.atlas_id : null)}</th>`;
       const indicator = `<td style="text-align:center;">${formatIndicator(ch.indicator)}</td>`;
       const schurIndex = showSI
         ? `<td style="text-align:center;">${escapeHtml(String(ch.schur_index ?? ""))}</td>`

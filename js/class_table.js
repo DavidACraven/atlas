@@ -23,7 +23,6 @@ async function displayClassTable(data) {
     showOrder: false,
     filterRationalOnly: false,
     filterRealOnly: false,
-    numberDisplay: "integer",
   };
 
   render();
@@ -87,6 +86,7 @@ async function displayClassTable(data) {
     if (!el) return;
     el.addEventListener("change", () => onChange(el.value));
   }
+
 }
 
 function renderControls(state) {

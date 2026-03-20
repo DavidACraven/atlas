@@ -346,7 +346,6 @@ container.addEventListener("click", (e) => {
         render();
       });
     }
-
     const orderSel = container.querySelector("#mx-order-display");
     if (orderSel) {
       orderSel.addEventListener("change", () => {
@@ -357,18 +356,24 @@ container.addEventListener("click", (e) => {
   }
 }
 
+
 function renderMaxControls(state) {
   return `
     <details class="controls-accordion">
       <summary>Table options</summary>
       <div class="table-controls" style="margin: 0.5rem 0 0.75rem 0;">
         <fieldset style="border: 1px solid #ddd; padding: 0.5rem; border-radius: 6px;">
-          <legend style="padding: 0 0.25rem;">Display</legend>
-          <label style="margin-right: 1rem;">
+          <legend style="padding: 0 0.25rem;">Show columns</legend>
+          <label>
             <input type="checkbox" id="mx-sg" ${state.showSmallGroup ? "checked" : ""}>
             Show SmallGroup id
           </label>
-          <label style="margin-right: 0.5rem;" for="mx-order-display">Order/Index format:</label>
+        </fieldset>
+      </div>
+      <div style="margin-top:0.5rem;">
+        <fieldset style="border: 1px solid #ddd; padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem;">
+          <legend style="padding: 0 0.25rem;">Display format</legend>
+          <label for="mx-order-display">Order/Index format:</label>
           <select id="mx-order-display">
             <option value="integer" ${state.orderDisplay === "integer" ? "selected" : ""}>Integer</option>
             <option value="factorization" ${state.orderDisplay === "factorization" ? "selected" : ""}>Factorization</option>
@@ -432,3 +437,5 @@ function renderMaxTable(maxInfo, state) {
     </table>
   `;
 }
+
+
