@@ -1,0 +1,34 @@
+{
+  "id": "u3(3)-2",
+  "name": "Almost simple unitary group $U_3(3):2$",
+  "type": "unitary",
+  "order": 12096,
+  "factored_order": "2^6.3^3.7",
+  "dividing_primes": [ 2, 3, 7 ],
+  "schur_multiplier": "1",
+  "outer_automorphism_group": "1",
+  "standard_generators": [["c","2B"],["d","4D"],["cd","7"]],
+  "number_of_classes": 16,
+  "class_names": ["1A","2A","2B","3A","3B","4AB","4C","4D","6A","6B","7AB","8AB","8C","12AB","12C","12D"],
+  "outer_class_names": ["1A","1A","2A","1A","1A","1A","1A","2A","1A","2A","1A","1A","2A","1A","2A","2A"],
+  "class_information": "u3(3)-2_class_info.json",
+  "character_information": "u3(3)-2_char_info.json",
+  "brauer_information": {
+    "2": "u3(3)-2_brauer_2.json",
+    "3": "u3(3)-2_brauer_3.json",
+    "7": "u3(3)-2_brauer_7.json"  },
+  "maximals_information": "u3(3)-2_maxes_info.json",
+  "symbol_definitions": "../symbols.json",
+  "representations": {
+    "permutation": "perm/",
+    "linear": "lin/"
+  },
+  "creator": "David Craven",
+  "creation_date": "2026-02-12",
+  "status": "active",
+  "atlas_version": "4.0",
+  "file_version": 1,
+  "version_history": "v1: first version",
+  "sources": "Automated using Magma V2.28-21.",
+  "last_updated": "2026-02-12"
+}

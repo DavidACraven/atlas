@@ -1,0 +1,30 @@
+[
+  {
+    "id": "u3(3)-2_perm_28_1",
+    "degree": 28,
+    "description": "Coset action on $3^{1+2}_+:SD_{16}$",
+    "type": "Primitive",
+    "file": "u3(3)-2_perm_28_1.json"
+  },
+  {
+    "id": "u3(3)-2_perm_36_1",
+    "degree": 36,
+    "description": "Coset action on $PGL_2(7)$",
+    "type": "Primitive",
+    "file": "u3(3)-2_perm_36_1.json"
+  },
+  {
+    "id": "u3(3)-2_perm_63_1",
+    "degree": 63,
+    "description": "Coset action on $2^{1+2}:S_3$",
+    "type": "Primitive",
+    "file": "u3(3)-2_perm_63_1.json"
+  },
+  {
+    "id": "u3(3)-2_perm_63_2",
+    "degree": 63,
+    "description": "Coset action on $4^2:D_{12}$",
+    "type": "Primitive",
+    "file": "u3(3)-2_perm_63_2.json"
+  }
+]

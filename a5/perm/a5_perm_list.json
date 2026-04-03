@@ -1,0 +1,23 @@
+[
+  {
+    "id": "a5_perm_5_1",
+    "degree": 5,
+    "description": "Coset action on $A_4$",
+    "type": "Primitive",
+    "file": "a5_perm_5_1.json"
+  },
+  {
+    "id": "a5_perm_6_1",
+    "degree": 6,
+    "description": "Coset action on $D_{10}$",
+    "type": "Primitive",
+    "file": "a5_perm_6_1.json"
+  },
+  {
+    "id": "a5_perm_10_1",
+    "degree": 10,
+    "description": "Coset action on $S_3$",
+    "type": "Primitive",
+    "file": "a5_perm_10_1.json"
+  }
+]

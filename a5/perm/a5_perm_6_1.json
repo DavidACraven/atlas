@@ -1,0 +1,24 @@
+{
+  "id": "a5_perm_6_1",
+  "name": "Permutation representation of Alternating group $A_5$ on 6 points",
+  "generators_format": ["cycle", "array"],
+  "generators": {
+    "cycle": [ "(1, 2)(3, 4)", "(1, 2, 4)(3, 5, 6)" ],
+    "array": [ [2,1,4,3,5,6], [2,4,5,1,6,3] ]
+  },
+  "degree": 6,
+  "type": "primitive",
+  "rank": 2,
+  "suborbit_lengths": [1,5],
+  "constituents": {"chi1": 1, "chi5": 1},
+  "point_stabilizer": "$D_{10}$",
+  "cycle_types": ["1^6","2^2,1^2","3^2","5,1","5,1"],
+  "creator": "David Craven",
+  "creation_date": "2026-02-15",
+  "status": "active",
+  "atlas_version": "4.0",
+  "file_version": 1,
+  "version_history": "v1: first version",
+  "sources": "Automated using Magma V2.28-21.",
+  "last_updated": "2026-02-15"
+}
