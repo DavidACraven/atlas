@@ -220,6 +220,7 @@ async function displayModularData(data) {
 
       output.innerHTML = "";
 
+
       const phi1 = brauerData.characters.find(c => c.id === "phi1");
       if (!phi1) {
         output.textContent = "Error: phi1 not found in character list.";
@@ -241,14 +242,15 @@ async function displayModularData(data) {
         `There are ${keepIndices.length} classes of ${p}-regular elements in the group. ` +
         `The Brauer character table is as follows.`;
 
-      output.appendChild(heading);
-      output.appendChild(intro);
       if (brauerData.notes) {
         const notes = document.createElement("p");
         notes.classList.add("brauer-notes");
         notes.innerHTML = brauerData.notes;
-        output.appendChild(notes);
+        intro.appendChild(notes);
       }
+
+      output.appendChild(heading);
+      output.appendChild(intro);
 
       const table = document.createElement("table");
       table.classList.add("brauer-char-table");

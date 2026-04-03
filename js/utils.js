@@ -12,6 +12,23 @@ function escapeHtml(s) {
     .replace(/"/g, "&quot;");
 }
 
+function renderFileMetadataInfo(meta, prefixText = "Main page created by") {
+  const version = meta?.file_version ?? "unknown";
+  const creator = meta?.creator ?? "unknown";
+  const created = meta?.creation_date ?? "unknown";
+  const updated = meta?.last_updated ?? "unknown";
+  const sources = meta?.sources ?? "unknown";
+  const versionhistory = meta?.version_history ?? "unknown";
+
+  return `
+    File version ${escapeHtml(String(version))} ·
+    ${escapeHtml(String(prefixText))} ${escapeHtml(String(creator))} on ${escapeHtml(String(created))} ·
+    Last updated ${escapeHtml(String(updated))}
+    <br />Sources: ${escapeHtml(String(sources))}
+    <br />Version history: ${escapeHtml(String(versionhistory))}
+  `;
+}
+
 function extractFirstMathFragment(s) {
   if (!s) return "";
   const m = String(s).match(/\$(.+?)\$/);

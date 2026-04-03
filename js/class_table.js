@@ -1,10 +1,10 @@
 // class_table.js
 
 async function displayClassTable(data) {
-  if (!data?.class_information) return;
+  if (!data?.class_information) return null;
 
   const container = document.getElementById("class-table");
-  if (!container) return;
+  if (!container) return null;
 
   // Fetch once
   const classInfo = await fetch(`./${data.class_information}`, { cache: "no-store" })
@@ -87,6 +87,7 @@ async function displayClassTable(data) {
     el.addEventListener("change", () => onChange(el.value));
   }
 
+  return classInfo;
 }
 
 function renderControls(state) {

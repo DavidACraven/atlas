@@ -269,12 +269,12 @@ function formatMaximalSubgroupAsText(maxData, meta) {
 ////////////////////////////////
 
 async function displayMaxTable(data) {
-  if (!data?.maximals_information) return;
+  if (!data?.maximals_information) return null;
 
   let wired = false;
 
   const container = document.getElementById("max-table");
-  if (!container) return;
+  if (!container) return null;
 
   // Fetch once
   const maxInfo = await fetch(`./${data.maximals_information}`, { cache: "no-store" })
@@ -316,8 +316,8 @@ container.addEventListener("click", (e) => {
 
   async function render() {
     // Preserve accordion open/closed across rerenders
-    const oldAcc = container.querySelector(".controls-accordion");
-    const wasOpen = oldAcc ? oldAcc.open : false;
+    const oldControlsAcc = container.querySelector("#max-controls-accordion");
+    const controlsWasOpen = oldControlsAcc ? oldControlsAcc.open : false;
 
     const html = `
       ${renderMaxControls(state)}
@@ -332,8 +332,8 @@ container.addEventListener("click", (e) => {
     }
 
     // Restore accordion state
-    const newAcc = container.querySelector(".controls-accordion");
-    if (newAcc) newAcc.open = wasOpen;
+    const newControlsAcc = container.querySelector("#max-controls-accordion");
+    if (newControlsAcc) newControlsAcc.open = controlsWasOpen;
 
     wire();
   }
@@ -354,12 +354,14 @@ container.addEventListener("click", (e) => {
       });
     }
   }
+
+  return maxInfo;
 }
 
 
 function renderMaxControls(state) {
   return `
-    <details class="controls-accordion">
+    <details id="max-controls-accordion" class="controls-accordion">
       <summary>Table options</summary>
       <div class="table-controls" style="margin: 0.5rem 0 0.75rem 0;">
         <fieldset style="border: 1px solid #ddd; padding: 0.5rem; border-radius: 6px;">

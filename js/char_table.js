@@ -25,7 +25,7 @@ function substitute(value, symbols) {
 
 async function displayCharTable(groupData) {
   const container = document.getElementById("char-table");
-  if (!container) return;
+  if (!container) return null;
 
   // Fetch char table + symbol definitions
   const charData = await fetch(`./${groupData.character_information}`, { cache: "no-store" })
@@ -97,7 +97,7 @@ async function displayCharTable(groupData) {
     if (!el) return;
     el.addEventListener("change", () => onChange(el.value));
   }
-
+  return charData;
 }
 
 
