@@ -94,8 +94,9 @@ function generateMaximalText(max, maxInfo, fmt) {
 
 function formatMaximalSubgroupAsMagma(maxData, meta) {
 
-  const prefix =
-    (meta.id ? meta.id.replace(/_maxes.*$/, "") : "G") + "_";
+  const prefixSource = meta.id ? meta.id.replace(/_maxes.*$/, "") : "G";
+  const prefix = sanitizeMagmaFunctionNameComponent(prefixSource) + "_";
+  const functionId = sanitizeMagmaFunctionNameComponent(maxData.id || "max");
 
   const groupName = stripMathDelimiters(meta.group || "");
   const maxName   = stripMathDelimiters(maxData.name || "");
@@ -131,7 +132,7 @@ function formatMaximalSubgroupAsMagma(maxData, meta) {
 
 
   // Function header
-  lines.push(`function ${prefix}${maxData.id}(G)`);
+  lines.push(`function ${prefix}${functionId}(G)`);
   lines.push("");
   lines.push("w1 := G.1; w2 := G.2;");
 
@@ -150,6 +151,12 @@ function formatMaximalSubgroupAsMagma(maxData, meta) {
   lines.push("end function;");
 
   return lines.join("\n");
+}
+
+function sanitizeMagmaFunctionNameComponent(value) {
+  return String(value ?? "")
+    .replace(/[-()]/g, "_")
+    .replace(/_+/g, "_");
 }
 
 function formatMaximalSubgroupAsMeataxe(maxData, meta) {
