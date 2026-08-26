@@ -1,73 +1,24 @@
-name: ATLAS Lie v17 temporary build
+name: ATLAS Lie v18 source fetch
 
 on:
   pull_request:
     branches: [main]
 
 jobs:
-  convert:
+  fetch-source:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install converter dependency
-        run: python -m pip install sympy
-      - name: Restore v16 conversion tools
+      - name: Fetch pre-rationalisation 2G2 source
         run: |
-          base64 -d v17_build_tools.tar.gz.b64 > /tmp/v17_tools.tar.gz
-          tar -xzf /tmp/v17_tools.tar.gz
-      - name: Fetch and verify pinned GCT sources
-        run: python tools/fetch_gct_sources_v16.py _gct_checkout_v17
-      - name: Convert all fourteen accepted tables
-        run: |
-          mkdir -p converted
-          python - <<'PY'
-          import json, subprocess, sys
-          from pathlib import Path
-          snap=json.load(open('SOURCE_SNAPSHOT_v16.json'))
-          for x in snap['files']:
-              rel=x['path']
-              src=Path('_gct_checkout_v17')/rel
-              subprocess.run([
-                  sys.executable,'tools/gct_julia_to_atlas.py',
-                  '--source-prefix',str(Path(rel).parent),
-                  '-o','converted',str(src)
-              ],check=False)
-          PY
-      - name: Report converter output
-        run: |
-          python - <<'PY'
-          import glob,json,os
-          ps=sorted(glob.glob('converted/*.atlas.json'))
-          print('outputs',len(ps))
-          for p in ps:
-              d=json.load(open(p))
-              print(os.path.basename(p),d.get('status'),d.get('error',''))
-          PY
-      - name: Upload pinned sources and converted JSON
+          set -euo pipefail
+          mkdir -p source
+          curl -fsSL 'https://raw.githubusercontent.com/oscar-system/GenericCharacterTables.jl/6db8911b669ab8eafbeb063866e5ee6f3b14da97/data/Tables/2G2/2G2.jl' -o source/2G2-pre-rationalisation.jl
+          test "$(git hash-object source/2G2-pre-rationalisation.jl)" = '7a2bdb402eb4736c848cf2635ebcd1523cd2a562'
+          wc -c source/2G2-pre-rationalisation.jl
+      - name: Upload source
         uses: actions/upload-artifact@v4
         with:
-          name: atlas-lie-v17-diagnostics
-          path: |
-            _gct_checkout_v17
-            converted
+          name: atlas-lie-v18-2g2-source
+          path: source/2G2-pre-rationalisation.jl
           if-no-files-found: error
-      - name: Audit converter output
-        run: |
-          python - <<'PY'
-          import glob,json,os
-          ps=sorted(glob.glob('converted/*.atlas.json'))
-          assert len(ps)==14, len(ps)
-          rows=[]
-          for p in ps:
-              d=json.load(open(p))
-              assert d['status']=='converted',(p,d.get('status'),d.get('error'))
-              assert d['structural_audit']['class_equation'],p
-              assert d['structural_audit']['degree_square_sum'],p
-              for ch in d['character_families']:
-                  assert len(ch['values_expr'])==len(d['class_families']),(p,ch['id'])
-              rows.append((os.path.basename(p),len(d['class_families']),len(d['character_families'])))
-          print(rows)
-          PY
