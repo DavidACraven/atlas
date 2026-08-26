@@ -1,0 +1,45 @@
+name: ATLAS Lie v22 source fetch
+
+on:
+  push:
+    branches: [atlas-lie-v22-fetch]
+
+permissions:
+  contents: read
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch pinned GenericDecMats files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p gdm_v22
+          base='https://raw.githubusercontent.com/oscar-system/GenericDecMats.jl/2f6850a3ebcf04bfba0876ecfedcd736a8338c72/data'
+          for f in B4d2 B4d3 B4d4 B4d6 B4d8 E6d3 E6d4 E6d5 E6d6 E6d8 E6d12 2E6d4 2E6d8 2E6d10 2E6d12 2E6d18 E7d7 E7d8 E7d9 E7d10 E7d12 E7d14 E7d18; do
+            curl -fsSL "$base/$f.json" -o "gdm_v22/$f.json"
+          done
+      - name: Verify Git blob hashes and JSON
+        shell: python
+        run: |
+          import hashlib, json, pathlib
+          expected = {
+            'B4d2':'6835a83c55675e081d2b4023dec743e41d9b31d6','B4d3':'5ed5bfb16aca5fdb4a3ec68a3b4fd8c27d3f5f55','B4d4':'c68ce35b97972121e4d9ae0d4a0741646e74f148','B4d6':'e372fe876e335de5562f251fb05ac7d9d148e112','B4d8':'e0967876cf8120416696709d8eba2c1faf22a6e1',
+            'E6d3':'0ef27c018b5fccd1ebef1a1d729d29a5155c8b0e','E6d4':'f777e1cff7cdda64412389e0e88d6c9572097794','E6d5':'769cb9cf9e5814bbf05f7eb9592c15fca161fc5a','E6d6':'e0e96625ba7d68fe3a5b63329b12249327b18759','E6d8':'1a05cb724787551c3eb2244c05d04cdd1b4cbacd','E6d12':'6d08d8f5a5f10d2dfdb60dacc710e9e961008cd7',
+            '2E6d4':'bb7c2dbc89d1495f5736e03f167a1bf326fb84db','2E6d8':'1204e58afd90c2ec89d22a63244a11e00417a528','2E6d10':'177d4663a02ff16fcfca0f8778905c49a8c64863','2E6d12':'fae8463dbb889bb4f8862b788d9a0fb08b3c225f','2E6d18':'61bb872ae3fd6511e703c8bd8d59b32c9b012be0',
+            'E7d7':'6072a70e649d259165c8e03212aef3fbff18a783','E7d8':'40a8f193d375c8da3606a56d7d3d1182b59ac559','E7d9':'6ec88075f04abe06db6d716156d5a3ef2f11e63d','E7d10':'9769ed213b23f256a132bf05a361262be2875119','E7d12':'6a246a4eb46c2c5a1c94b6e1c114e92b32a35d5e','E7d14':'7ee4b915d2dd0136a8d6942aa37b4d52ed280507','E7d18':'fe2afed0415aa75025e9d56c9c8b6e5b41fa8861'
+          }
+          for name, want in expected.items():
+            p = pathlib.Path('gdm_v22')/(name+'.json')
+            b = p.read_bytes()
+            got = hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()
+            assert got == want, (name, got, want)
+            json.loads(b)
+            print('OK', name, got, len(b))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: atlas-lie-v22-gdm
+          path: gdm_v22
+          if-no-files-found: error
