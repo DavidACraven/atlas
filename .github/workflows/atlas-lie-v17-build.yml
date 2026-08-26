@@ -34,8 +34,26 @@ jobs:
                   sys.executable,'tools/gct_julia_to_atlas.py',
                   '--source-prefix',str(Path(rel).parent),
                   '-o','converted',str(src)
-              ],check=True)
+              ],check=False)
           PY
+      - name: Report converter output
+        run: |
+          python - <<'PY'
+          import glob,json,os
+          ps=sorted(glob.glob('converted/*.atlas.json'))
+          print('outputs',len(ps))
+          for p in ps:
+              d=json.load(open(p))
+              print(os.path.basename(p),d.get('status'),d.get('error',''))
+          PY
+      - name: Upload pinned sources and converted JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-lie-v17-diagnostics
+          path: |
+            _gct_checkout_v17
+            converted
+          if-no-files-found: error
       - name: Audit converter output
         run: |
           python - <<'PY'
@@ -53,11 +71,3 @@ jobs:
               rows.append((os.path.basename(p),len(d['class_families']),len(d['character_families'])))
           print(rows)
           PY
-      - name: Upload pinned sources and converted JSON
-        uses: actions/upload-artifact@v4
-        with:
-          name: atlas-lie-v17-materialised
-          path: |
-            _gct_checkout_v17
-            converted
-          if-no-files-found: error
