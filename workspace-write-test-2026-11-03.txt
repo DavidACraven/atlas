@@ -1,0 +1,4 @@
+ChatGPT GitHub direct-write test
+Date: 2026-11-03
+Purpose: verify that repository file creation works while the local workspace is read-only.
+No production files were modified.
